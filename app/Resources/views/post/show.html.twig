@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="col-md-8">
+        <h1>{{ post.title }}</h1>
+
+        <p>{{ post.content }}</p>
+
+        <a class="btn btn-primary" href="{{ path('post_index') }}">Back to the list</a>
+        <a class="btn btn-primary" href="{{ path('post_edit', { 'id': post.id }) }}">Edit</a>
+
+        {{ form_start(delete_form) }}
+            <input class="btn btn-primary" type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+
+    </div>
+{% endblock %}
